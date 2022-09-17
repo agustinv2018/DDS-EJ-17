@@ -42,9 +42,9 @@ class Persona {
     {
         $con  = Database::getInstance();
         $sql = "insert into personas (Nombre,Apellido,NroDocumento,Direccion,Email) values (:p1,:p2,:p3,:p4,:p5)";
-        $claseAReemplazar = $con->db->prepare($sql);
+        $Persona = $con->db->prepare($sql);
         $params = array("p1" => $this->Nombre, "p2" => $this->Apellido, "p3" => $this->NroDocumento, "p4" => $this->Direccion, "p5" => $this->Email);     
-        $claseAReemplazar->execute($params);
+        $Persona->execute($params);
     }
 
 }
